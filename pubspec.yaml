@@ -1,0 +1,35 @@
+name: smart_retina_app
+description: "Smart Retina - AI-Powered Retinal Disease Detection"
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.1.1
+  http: ^1.2.0
+  http_parser: ^4.0.2
+  image_picker: ^1.1.2
+  file_selector: ^1.0.3
+  shared_preferences: ^2.2.2
+  google_sign_in: ^6.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/hero_image.png
+    - assets/age-related.png
+    - assets/diabetic_retinopathy.png
+    - assets/retinal_detachment.png
+    - assets/retinal_pigmentosa.png
+    - assets/retinal_vein_occlusion.png
+    - assets/mypic.jpeg
