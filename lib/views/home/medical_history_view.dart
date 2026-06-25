@@ -93,67 +93,71 @@ class _Header extends StatelessWidget {
   Widget build(BuildContext context) {
     final isWide = MediaQuery.of(context).size.width > 800;
     
-    return Column(
+    return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Row(
-          children: const [
-            Icon(Icons.description, color: Color(0xFF1E3A8A), size: 28),
-            SizedBox(width: 12),
-            Flexible(
-              child: Text(
-                'My Medical History',
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: const [
+                  Icon(Icons.description, color: Color(0xFF1E3A8A), size: 28),
+                  SizedBox(width: 12),
+                  Flexible(
+                    child: Text(
+                      'My Medical History',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF1E3A8A),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+              const Text(
+                'View your past AI diagnosis reports and doctor notes.',
                 style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF1E3A8A),
+                  fontSize: 14,
+                  color: Color(0xFF64748B),
                 ),
               ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 8),
-        const Text(
-          'View your past AI diagnosis reports and doctor notes.',
-          style: TextStyle(
-            fontSize: 14,
-            color: Color(0xFF64748B),
-          ),
-        ),
-        if (!isWide) ...[
-          const SizedBox(height: 16),
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton.icon(
-              onPressed: () => Navigator.pushNamed(context, '/upload'),
-              icon: const Icon(Icons.upload_file, size: 20),
-              label: const Text('Upload New Scan'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF1E3A8A),
-                foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
+              if (!isWide) ...[
+                const SizedBox(height: 16),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton.icon(
+                    onPressed: () => Navigator.pushNamed(context, '/upload'),
+                    icon: const Icon(Icons.upload_file, size: 20),
+                    label: const Text('Upload New Scan'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF1E3A8A),
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-            ),
+              ],
+            ],
           ),
-        ],
+        ),
         if (isWide)
-          Positioned(
-            top: 0,
-            right: 0,
-            child: ElevatedButton.icon(
-              onPressed: () => Navigator.pushNamed(context, '/upload'),
-              icon: const Icon(Icons.upload_file),
-              label: const Text('Upload New Scan'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF1E3A8A),
-                foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
+          ElevatedButton.icon(
+            onPressed: () => Navigator.pushNamed(context, '/upload'),
+            icon: const Icon(Icons.upload_file),
+            label: const Text('Upload New Scan'),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF1E3A8A),
+              foregroundColor: Colors.white,
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
               ),
             ),
           ),
