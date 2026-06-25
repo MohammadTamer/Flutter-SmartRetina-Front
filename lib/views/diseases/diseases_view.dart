@@ -39,12 +39,12 @@ class DiseasesView extends StatelessWidget {
           'https://my.clevelandclinic.org/health/diseases/14206-retinal-vein-occlusion-rvo',
     ),
     _Disease(
-      title: 'Retinitis Pigmentosa',
-      desc: 'Inherited retinal degeneration affecting night vision.',
+      title: 'Glaucoma',
+      desc: 'Progressive optic nerve damage often linked to high eye pressure.',
       longDesc:
-          'Retinitis Pigmentosa is a genetic disorder that causes progressive loss of photoreceptors, starting with night blindness and eventually leading to tunnel vision.',
+          'Glaucoma is a group of eye diseases that damage the optic nerve, often due to increased intraocular pressure. It usually develops gradually without noticeable symptoms in the early stages and can lead to irreversible vision loss if left untreated. Early diagnosis and treatment can help slow or prevent further vision damage.',
       img: 'https://smartretina.vercel.app/retinal_pigmentosa.png',
-      slug: 'https://en.wikipedia.org/wiki/Retinitis_pigmentosa',
+      slug: 'https://en.wikipedia.org/wiki/Glaucoma',
     ),
     _Disease(
       title: 'Retinal Detachment',
